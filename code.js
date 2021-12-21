@@ -47,6 +47,8 @@ function changeGridTemplate() {
 
   document.querySelector(".grid-container").style.gridTemplateColumns = `repeat(${currentGridSize}, 25px)`;
   document.querySelector(".grid-container").style.gridTemplateRows = `repeat(${currentGridSize}, 25px)`;
+  // ! change size to dynamic
+  // * must be responsive to changes in sides of the grid
 
   // ! remove classes(boxes) that are not needed
 }
