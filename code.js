@@ -11,7 +11,7 @@ for(i = 0; i <= 256; i++) {
   div.style.background = "red";
   div.style.border = "1px solid black"
 
-  div.classList.add("test");
+  div.classList.add(`test${i}`);
 
   document.querySelector(".grid-container").appendChild(div);
 }
