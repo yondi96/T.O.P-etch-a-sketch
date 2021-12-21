@@ -1,7 +1,13 @@
 // * an app similar to sketchpad and an etch a sketch
 
-// * for loop to create 256 small boxes inside grid-container
-for(i = 1; i <= 256; i++) {
+// default size of box
+let currentGridSize = 16;
+changeGridTemplate();
+
+
+// generate boxes
+// ! put this is a function
+for(i = 1; i <= (currentGridSize * currentGridSize); i++) {
   // create a div
   const div = document.createElement("div");
 
@@ -23,4 +29,24 @@ for(i = 1; i <= 256; i++) {
   })
 }
 
-// * next: 
+const clearGrid = document.querySelector(".clear");
+
+clearGrid.addEventListener("click", () => {
+  let numberOfBox = prompt("How many sides do you want?");
+  if(numberOfBox != null && numberOfBox != "" && !isNaN(numberOfBox) && numberOfBox <= 100) {
+    currentGridSize = numberOfBox;
+    changeGridTemplate();
+  } else if(numberOfBox > 100) {
+    console.log("limit of 100x100");
+  }
+})
+
+
+function changeGridTemplate() {
+  // remove allboxes before this
+
+  document.querySelector(".grid-container").style.gridTemplateColumns = `repeat(${currentGridSize}, 25px)`;
+  document.querySelector(".grid-container").style.gridTemplateRows = `repeat(${currentGridSize}, 25px)`;
+
+  // ! remove classes(boxes) that are not needed
+}
