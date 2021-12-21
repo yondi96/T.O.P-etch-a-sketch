@@ -3,14 +3,12 @@
 // create a div
 
 
-for(i = 0; i <= 256; i++) {
+for(i = 1; i <= 256; i++) {
   // create a div
   const div = document.createElement("div");
 
   // style the small box
-  div.style.height = "40px";
-  div.style.width = "40px";
-  div.style.background = "red";
+  div.style.background = "green";
   div.style.border = "1px solid black"
 
   // give classes to divs
